@@ -12,7 +12,7 @@ type DbConnection = {
     password: string,
     database: string,
     dbLogging: boolean
-}
+};
 
 const connection: DbConnection = {
     host: process.env.MYSQL_HOST,
@@ -21,6 +21,6 @@ const connection: DbConnection = {
     password: process.env.MYSQL_PASSWORD,
     database: process.env.MYSQL_DATABASE,
     dbLogging: process.env.LOG === 'true'
-}
+};
 
 export default connection;

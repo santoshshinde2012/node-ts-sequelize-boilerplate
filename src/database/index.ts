@@ -1,6 +1,5 @@
-import { Dialect, Sequelize } from 'sequelize'
+import { Dialect, Sequelize } from 'sequelize';
 import connection from '../config';
-import logger from '../lib/logger';
 
 const {
   database,
@@ -12,10 +11,10 @@ const {
 
 
 const sequelizeConnection = new Sequelize(database, user, password, {
-  host: host,
+  host,
   logging: dbLogging,
   dialect: 'mysql' as Dialect
 });
 
-export default sequelizeConnection
+export default sequelizeConnection;
 
