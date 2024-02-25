@@ -4,9 +4,11 @@ import http from 'http';
 import helmet from 'helmet';
 import 'dotenv/config';
 import swaggerUi from 'swagger-ui-express';
+import database from './database';
 import swaggerDocument from '../swagger.json';
 import registerRoutes from './routes';
 import addErrorHandler from './middleware/error-handler';
+import logger from './lib/logger';
 
 export default class App {
 	public express: express.Application;
@@ -16,6 +18,9 @@ export default class App {
 	public async init(): Promise<void> {
 		this.express = express();
 		this.httpServer = http.createServer(this.express);
+
+		// Assert database connection
+		await this.assertDatabaseConnection();
 
 		// add all global middleware like cors
 		this.middleware();
@@ -38,7 +43,7 @@ export default class App {
 	private routes(): void {
 		this.express.get('/', this.basePathRoute);
 		this.express.get('/web', this.parseRequestHeader, this.basePathRoute);
-		this.express.use('/', registerRoutes());
+		this.express.use('/api', registerRoutes());
 	}
 
 	/**
@@ -79,6 +84,15 @@ export default class App {
 		response: express.Response,
 	): void {
 		response.json({ message: 'base path' });
+	}
+
+	private async assertDatabaseConnection(): Promise<void> {
+		try {
+			await database.authenticate();
+			logger.info('Connection has been established successfully.');
+		  } catch (error) {
+			logger.error('Unable to connect to the database:', error);
+		  }
 	}
 
 	private setupSwaggerDocs(): void {
