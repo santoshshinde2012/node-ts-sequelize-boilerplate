@@ -17,7 +17,7 @@ describe('status integration tests', () => {
 
     it('can get server time', async () => {
         await request(app)
-            .get('/system/time')
+            .get('/api/system/time')
             .set('Accept', 'application/json')
             .expect('Content-Type', contentType)
             .expect(StatusCodes.OK);
@@ -25,7 +25,7 @@ describe('status integration tests', () => {
 
     it('can get server system info', async () => {
         await request(app)
-            .get('/system/info')
+            .get('/api/system/info')
             .set('Accept', 'application/json')
             .expect('Content-Type', contentType)
             .expect(StatusCodes.OK);
@@ -33,7 +33,7 @@ describe('status integration tests', () => {
 
     it('can get server system usage', async () => {
         await request(app)
-            .get('/system/usage')
+            .get('/api/system/usage')
             .set('Accept', 'application/json')
             .expect('Content-Type', contentType)
             .expect(StatusCodes.OK);
@@ -41,7 +41,7 @@ describe('status integration tests', () => {
 
     it('can get server system process info', async () => {
         await request(app)
-            .get('/system/process')
+            .get('/api/system/process')
             .set('Accept', 'application/json')
             .expect('Content-Type', contentType)
             .expect(StatusCodes.OK);
@@ -49,7 +49,7 @@ describe('status integration tests', () => {
 
     it('should get the error', async () => {
         await request(app)
-            .get('/system/error')
+            .get('/api/system/error')
             .set('Accept', 'application/json')
             .expect('Content-Type', contentType)
             .expect(StatusCodes.BAD_REQUEST);

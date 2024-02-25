@@ -1,4 +1,4 @@
-# [Node-Typescript-Boilerplate](https://blog.santoshshinde.com/skeleton-for-node-js-apps-written-in-typescript-444fa1695b30)  [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=santoshshinde2012_node-boilerplate&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=santoshshinde2012_node-boilerplate)
+# [Node-TS-Sequelize-Boilerplate](https://blog.santoshshinde.com/skeleton-for-node-js-apps-written-in-typescript-444fa1695b30)  [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=santoshshinde2012_node-boilerplate&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=santoshshinde2012_node-boilerplate)
 
 Skeleton for Node.js applications written in TypeScript
 
@@ -33,6 +33,7 @@ Try it!! I am happy to hear your feedback or any kind of new features.
 - [x] `typescript`
 - [x] `dotenv`
 - [x] `cors`
+- [x] `sequelize mysql2`
 - [x] `helmet`
 - [x] `http-status-codes`
 - [x] `winston`, `@types/winston`
@@ -88,10 +89,10 @@ The swagger documentation is available at the following url `${host}/docs`:
 ## Default System Health Status API
 
 - `${host}/api/system/info` - Return the system information in response
-- `${host}/system/time` - Return the current time in response
-- `${host}/system/usage` - Return the process and system memory usage in response
-- `${host}/system/process` -  Return the process details in response
-- `${host}/system/error` - Return the error generated object in response
+- `${host}/api/system/time` - Return the current time in response
+- `${host}/api/system/usage` - Return the process and system memory usage in response
+- `${host}/api/system/process` -  Return the process details in response
+- `${host}/api/system/error` - Return the error generated object in response
 
 ![Swagger API Documentation](https://github.com/santoshshinde2012/node-boilerplate/blob/master/wiki/swagger-api-documentation.jpg?raw=true)
 

@@ -6,25 +6,16 @@ const {
   database,
   user,
   password,
-  host
+  host,
+  dbLogging
 } = connection;
 
 
 const sequelizeConnection = new Sequelize(database, user, password, {
   host: host,
+  logging: dbLogging,
   dialect: 'mysql' as Dialect
 });
-
-async function synchronizeModels() {
-  try {
-    await sequelizeConnection.sync();
-    logger.info('All models were synchronized successfully.');
-  } catch (error) {
-    logger.error('An error occurred while synchronizing models:', error);
-  }
-}
-
-synchronizeModels();
 
 export default sequelizeConnection
 

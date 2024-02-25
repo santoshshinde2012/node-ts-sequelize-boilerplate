@@ -5,7 +5,7 @@
         "version": "1.0.0",
         "title": "Node Boilerplate"
     },
-    "host": "",
+    "host": "/api",
     "basePath": "",
     "tags": [{
         "name": "node-boilerplate",

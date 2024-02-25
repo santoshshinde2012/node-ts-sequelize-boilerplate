@@ -89,6 +89,7 @@ export default class App {
 	private async assertDatabaseConnection(): Promise<void> {
 		try {
 			await database.authenticate();
+			await database.sync();
 			logger.info('Connection has been established successfully.');
 		  } catch (error) {
 			logger.error('Unable to connect to the database:', error);
